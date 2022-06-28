@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "MAWp6++gb5By72D76mbzK5y6btVAylgzlz1kHZYbx3lZoWnhJzD3bq5uI4FljAPYKmAaJD+xsbZu3b2QUKoZ4Q==",
+  "success": true,
+  "projectFilePath": "F:\\维宏\\Code\\MySchedule\\MySchedule.Api\\MySchedule.Api.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\15810\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\15810\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\15810\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
+    "C:\\Users\\15810\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
+    "C:\\Users\\15810\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
+    "C:\\Users\\15810\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
+  ],
+  "logs": []
+}
