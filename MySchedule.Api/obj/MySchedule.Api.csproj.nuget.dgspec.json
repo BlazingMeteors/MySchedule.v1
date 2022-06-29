@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\维宏\\Code\\MySchedule\\MySchedule.Api\\MySchedule.Api.csproj": {}
+    "F:\\WeiHong\\Code\\MySchedule\\MySchedule.Api\\MySchedule.Api.csproj": {}
   },
   "projects": {
-    "F:\\维宏\\Code\\MySchedule\\MySchedule.Api\\MySchedule.Api.csproj": {
+    "F:\\WeiHong\\Code\\MySchedule\\MySchedule.Api\\MySchedule.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\维宏\\Code\\MySchedule\\MySchedule.Api\\MySchedule.Api.csproj",
+        "projectUniqueName": "F:\\WeiHong\\Code\\MySchedule\\MySchedule.Api\\MySchedule.Api.csproj",
         "projectName": "MySchedule.Api",
-        "projectPath": "F:\\维宏\\Code\\MySchedule\\MySchedule.Api\\MySchedule.Api.csproj",
+        "projectPath": "F:\\WeiHong\\Code\\MySchedule\\MySchedule.Api\\MySchedule.Api.csproj",
         "packagesPath": "C:\\Users\\15810\\.nuget\\packages\\",
-        "outputPath": "F:\\维宏\\Code\\MySchedule\\MySchedule.Api\\obj\\",
+        "outputPath": "F:\\WeiHong\\Code\\MySchedule\\MySchedule.Api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Microsoft Visual Studio\\Shared\\NuGetPackages"

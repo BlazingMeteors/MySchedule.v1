@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TEG2Bbtbte8woFiiAmlBqsrKZSsGAKyDRM14gcf8j8boeOVjJkT8b7FzINPrWRzJErdMSRkKXeU7Cq9wrtyB6w==",
+  "dgSpecHash": "MunyriUqoj5FMARAG2leCa47sviMxYYMJo2Xz51Gwy9BsGrtaE3Xa62kSNQgtabx17G3DTVr4810EJmy70ifYA==",
   "success": true,
-  "projectFilePath": "F:\\维宏\\Code\\MySchedule\\MySchedule\\MySchedule.csproj",
+  "projectFilePath": "F:\\WeiHong\\Code\\MySchedule\\MySchedule\\MySchedule.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\15810\\.nuget\\packages\\dryioc.dll\\4.7.7\\dryioc.dll.4.7.7.nupkg.sha512",
     "C:\\Users\\15810\\.nuget\\packages\\materialdesigncolors\\2.0.1\\materialdesigncolors.2.0.1.nupkg.sha512",

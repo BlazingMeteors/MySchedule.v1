@@ -980,11 +980,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\维宏\\Code\\MySchedule\\MySchedule\\MySchedule.csproj",
+      "projectUniqueName": "F:\\WeiHong\\Code\\MySchedule\\MySchedule\\MySchedule.csproj",
       "projectName": "MySchedule",
-      "projectPath": "F:\\维宏\\Code\\MySchedule\\MySchedule\\MySchedule.csproj",
+      "projectPath": "F:\\WeiHong\\Code\\MySchedule\\MySchedule\\MySchedule.csproj",
       "packagesPath": "C:\\Users\\15810\\.nuget\\packages\\",
-      "outputPath": "F:\\维宏\\Code\\MySchedule\\MySchedule\\obj\\",
+      "outputPath": "F:\\WeiHong\\Code\\MySchedule\\MySchedule\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "D:\\Microsoft Visual Studio\\Shared\\NuGetPackages"
