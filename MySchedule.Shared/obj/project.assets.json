@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\WeiHong\\Code\\MySchedule\\MySchedule.Shared\\MySchedule.Shared.csproj",
+      "projectUniqueName": "F:\\WeiHong\\MySchedule\\MySchedule.Shared\\MySchedule.Shared.csproj",
       "projectName": "MySchedule.Shared",
-      "projectPath": "F:\\WeiHong\\Code\\MySchedule\\MySchedule.Shared\\MySchedule.Shared.csproj",
+      "projectPath": "F:\\WeiHong\\MySchedule\\MySchedule.Shared\\MySchedule.Shared.csproj",
       "packagesPath": "C:\\Users\\15810\\.nuget\\packages\\",
-      "outputPath": "F:\\WeiHong\\Code\\MySchedule\\MySchedule.Shared\\obj\\",
+      "outputPath": "F:\\WeiHong\\MySchedule\\MySchedule.Shared\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "D:\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MunyriUqoj5FMARAG2leCa47sviMxYYMJo2Xz51Gwy9BsGrtaE3Xa62kSNQgtabx17G3DTVr4810EJmy70ifYA==",
+  "dgSpecHash": "CvFV6tkGj/qrYReOVjwsDDGax9e1ANuYkJCEC5u0zZerRdJE0vHD1cO8JzBb1Taj9BkJlppnQKcAa2KHHrNXew==",
   "success": true,
-  "projectFilePath": "F:\\WeiHong\\Code\\MySchedule\\MySchedule\\MySchedule.csproj",
+  "projectFilePath": "F:\\WeiHong\\MySchedule\\MySchedule\\MySchedule.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\15810\\.nuget\\packages\\dryioc.dll\\4.7.7\\dryioc.dll.4.7.7.nupkg.sha512",
     "C:\\Users\\15810\\.nuget\\packages\\materialdesigncolors\\2.0.1\\materialdesigncolors.2.0.1.nupkg.sha512",
@@ -10,9 +10,11 @@
     "C:\\Users\\15810\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\15810\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\15810\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.31\\microsoft.xaml.behaviors.wpf.1.1.31.nupkg.sha512",
+    "C:\\Users\\15810\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\15810\\.nuget\\packages\\prism.core\\8.1.97\\prism.core.8.1.97.nupkg.sha512",
     "C:\\Users\\15810\\.nuget\\packages\\prism.dryioc\\8.1.97\\prism.dryioc.8.1.97.nupkg.sha512",
     "C:\\Users\\15810\\.nuget\\packages\\prism.wpf\\8.1.97\\prism.wpf.8.1.97.nupkg.sha512",
+    "C:\\Users\\15810\\.nuget\\packages\\restsharp\\106.12.0\\restsharp.106.12.0.nupkg.sha512",
     "C:\\Users\\15810\\.nuget\\packages\\system.io\\4.3.0\\system.io.4.3.0.nupkg.sha512",
     "C:\\Users\\15810\\.nuget\\packages\\system.reflection\\4.3.0\\system.reflection.4.3.0.nupkg.sha512",
     "C:\\Users\\15810\\.nuget\\packages\\system.reflection.emit.ilgeneration\\4.3.0\\system.reflection.emit.ilgeneration.4.3.0.nupkg.sha512",

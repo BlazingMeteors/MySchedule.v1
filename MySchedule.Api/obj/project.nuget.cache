@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PFrZD8tN0y6tmgH1kwofzFRrKbtB/VH0J++wujKqopCmIIKdtY8QKJFCGdGq1dwyRAnn+vN5q+re/EXspzUNVw==",
+  "dgSpecHash": "o7VsvpE0b+D1jPbeBvS3temsaq+lOeJ+cW6CUqRlg4i7FfN9rDxkWjBvTcymuwa8VKspgGPG4B1d7C5alNVSDA==",
   "success": true,
-  "projectFilePath": "F:\\WeiHong\\Code\\MySchedule\\MySchedule.Api\\MySchedule.Api.csproj",
+  "projectFilePath": "F:\\WeiHong\\MySchedule\\MySchedule.Api\\MySchedule.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\15810\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\15810\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

@@ -1433,11 +1433,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\WeiHong\\Code\\MySchedule\\MySchedule.Api\\MySchedule.Api.csproj",
+      "projectUniqueName": "F:\\WeiHong\\MySchedule\\MySchedule.Api\\MySchedule.Api.csproj",
       "projectName": "MySchedule.Api",
-      "projectPath": "F:\\WeiHong\\Code\\MySchedule\\MySchedule.Api\\MySchedule.Api.csproj",
+      "projectPath": "F:\\WeiHong\\MySchedule\\MySchedule.Api\\MySchedule.Api.csproj",
       "packagesPath": "C:\\Users\\15810\\.nuget\\packages\\",
-      "outputPath": "F:\\WeiHong\\Code\\MySchedule\\MySchedule.Api\\obj\\",
+      "outputPath": "F:\\WeiHong\\MySchedule\\MySchedule.Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "D:\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1458,8 +1458,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "F:\\WeiHong\\Code\\MySchedule\\MySchedule.Shared\\MySchedule.Shared.csproj": {
-              "projectPath": "F:\\WeiHong\\Code\\MySchedule\\MySchedule.Shared\\MySchedule.Shared.csproj"
+            "F:\\WeiHong\\MySchedule\\MySchedule.Shared\\MySchedule.Shared.csproj": {
+              "projectPath": "F:\\WeiHong\\MySchedule\\MySchedule.Shared\\MySchedule.Shared.csproj"
             }
           }
         }

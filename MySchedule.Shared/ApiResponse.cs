@@ -12,6 +12,8 @@ namespace MyToDo.Shared.Contact
         public bool Status { get; set; }
 
         public object Result { get; set; }
+
+
     }
 
     public class ApiResponse<T>

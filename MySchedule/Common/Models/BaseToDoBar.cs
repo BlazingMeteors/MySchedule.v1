@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace MySchedule.Common.Models
 {
     //详细记录日常安排的实体类
-    internal class BaseToDoBar
+    public class BaseToDoBar
     {
         private int id;
 

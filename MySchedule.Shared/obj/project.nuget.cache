@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7CwKhKWIMJeY6lKxh7QZZiwEht5qiVXc33F6JsxZqkZEt9a/SkQgHThdOXNM5/daH9oJuyaC4RocSE51S73KCg==",
+  "dgSpecHash": "6mTCxG7aOQedVeQcW8C43MDkfky4HiT0LKgkpaddqos52poTshZIJxQnFX0QYzGZrEcdzaWptRAW5LD8xfFxsA==",
   "success": true,
-  "projectFilePath": "F:\\WeiHong\\Code\\MySchedule\\MySchedule.Shared\\MySchedule.Shared.csproj",
+  "projectFilePath": "F:\\WeiHong\\MySchedule\\MySchedule.Shared\\MySchedule.Shared.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
