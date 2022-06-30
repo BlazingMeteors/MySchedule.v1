@@ -1,11 +1,18 @@
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using MySchedule.Api.Context;
+using MySchedule.Api.Extentions;
+using MySchedule.Api.Repository;
+using MySchedule.Api.Service;
+using MyToDo.Api;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +32,34 @@ namespace MySchedule.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //
+            services.AddDbContext<MyScheduleContext>(option =>
+            {
+                var connectionString = Configuration.GetConnectionString("MyScheduleConnection");
+                option.UseSqlite(connectionString);
+            }).AddUnitOfWork<MyScheduleContext>()
+            .AddCustomRepository<ToDo, ToDoRepository>()
+            .AddCustomRepository<Memo, MemoRepository>()
+            .AddCustomRepository<User, UserRepository>();
 
+            //注册待办事项服务
+            services.AddTransient<IToDoService, ToDoService>();
+            //注册备忘录服务
+            services.AddTransient<IMemoService, MemoService>();
+            //注册用户服务
+            services.AddTransient<ILoginService, LoginService>();
+
+
+
+            //注册automapper自动转换
+            var automapperConfig = new MapperConfiguration(config =>
+            {
+                config.AddProfile(new AutoMapperProFile());
+            });
+            services.AddSingleton(automapperConfig.CreateMapper());
+
+
+            //
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

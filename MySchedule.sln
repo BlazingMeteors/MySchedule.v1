@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MySchedule", "MySchedule\My
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MySchedule.Api", "MySchedule.Api\MySchedule.Api.csproj", "{D55B765B-9F06-4135-89A9-44D2855E071C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySchedule.Shared", "MySchedule.Shared\MySchedule.Shared.csproj", "{6EFBC01C-F88C-46F0-9C41-051BC7159F19}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D55B765B-9F06-4135-89A9-44D2855E071C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D55B765B-9F06-4135-89A9-44D2855E071C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D55B765B-9F06-4135-89A9-44D2855E071C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EFBC01C-F88C-46F0-9C41-051BC7159F19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EFBC01C-F88C-46F0-9C41-051BC7159F19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EFBC01C-F88C-46F0-9C41-051BC7159F19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EFBC01C-F88C-46F0-9C41-051BC7159F19}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
