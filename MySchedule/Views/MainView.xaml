@@ -26,8 +26,9 @@
     AllowsTransparency="True">
     <materialDesign:DialogHost
         Identifier="RootDialog"
-        DialogTheme="Inherit"
-        SnackbarMessageQueue="{Binding ElementName=MainSnackbar, Path=MessageQueue}">
+        DialogTheme="Inherit" 
+        x:Name="DialogHost">
+        <!--SnackbarMessageQueue="{Binding ElementName=MainSnackbar, Path=MessageQueue}">-->
         <materialDesign:DrawerHost
             x:Name="DrawerHost"
             IsLeftDrawerOpen="{Binding ElementName=MenuToggleButton, Path=IsChecked}">

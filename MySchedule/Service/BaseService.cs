@@ -8,8 +8,13 @@ using System.Threading.Tasks;
 
 namespace MySchedule.Service
 {
+    /// <summary>
+    /// 通用的基础服务实现
+    /// </summary>
+    /// <typeparam name="TEntity"></typeparam>
     public class BaseService<TEntity> : IBaseService<TEntity> where TEntity : class
     {
+        //客户端
         private readonly HttpRestClient client;
         //提供服务的名称
         private readonly string serviceName;
@@ -23,7 +28,7 @@ namespace MySchedule.Service
 
 
         //增删改查
-        async Task<ApiResponse<TEntity>> IBaseService<TEntity>.AddAsync(TEntity entity)
+         async Task<ApiResponse<TEntity>> IBaseService<TEntity>.AddAsync(TEntity entity)
         {
             BaseRequest request = new BaseRequest();
             request.Method = RestSharp.Method.POST;
@@ -49,6 +54,7 @@ namespace MySchedule.Service
                 $"&search={parameter.Search}";
             return await client.ExecuteAsync<PagedList<TEntity>>(request);
         }
+
 
         async Task<ApiResponse<TEntity>> IBaseService<TEntity>.GetFirstOfDefaultAsync(int id)
         {

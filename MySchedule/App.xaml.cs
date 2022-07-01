@@ -31,11 +31,14 @@ namespace MySchedule
         {
             //依赖注入注册服务
             containerRegistry.GetContainer().Register<HttpRestClient>(made:Parameters.Of.Type<string>(serviceKey: "webUrl"));
+            //服务地址
             containerRegistry.GetContainer().RegisterInstance(@"http://localhost:12161/", serviceKey: "webUrl");
+            //注册服务
             containerRegistry.Register<IToDoService,ToDoService>();
+            containerRegistry.Register<IMemoService, MemoService>();
 
 
-            //区域导航
+            //Prism区域导航
             containerRegistry.RegisterForNavigation<IndexView, IndexViewModel>();
             containerRegistry.RegisterForNavigation<MemoView, MemoViewModel>();
             containerRegistry.RegisterForNavigation<SettingsView, SettingsViewModel>();

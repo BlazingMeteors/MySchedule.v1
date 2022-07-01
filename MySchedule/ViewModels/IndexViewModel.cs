@@ -1,5 +1,5 @@
 ﻿using MySchedule.Common.Models;
-//using MySchedule.Shared.Dtos;
+using MySchedule.Shared.Dtos;
 using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
@@ -7,6 +7,8 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+//using MemoDto = MySchedule.Shared.Dtos.MemoDto;
+//using ToDoDto = MySchedule.Shared.Dtos.ToDoDto;
 
 namespace MySchedule.ViewModels
 {
@@ -45,9 +47,9 @@ namespace MySchedule.ViewModels
             set { toDoDtos = value; RaisePropertyChanged(); }
         }
         //备忘录的数据集合
-        private ObservableCollection<MemoDto> memoDtos;
+        private ObservableCollection<Shared.Dtos.MemoDto> memoDtos;
 
-        public ObservableCollection<MemoDto> MemoDtos
+        public ObservableCollection<Shared.Dtos.MemoDto> MemoDtos
         {
             get { return memoDtos; }
             set { memoDtos = value; RaisePropertyChanged(); }
@@ -56,12 +58,12 @@ namespace MySchedule.ViewModels
         public void CreateTestData()
         {
             ToDoDtos = new ObservableCollection<ToDoDto>();
-            MemoDtos = new ObservableCollection<MemoDto>();
+            MemoDtos = new ObservableCollection<Shared.Dtos.MemoDto>();
             for (int i = 0; i < 10; i++)
             {
                 ToDoDtos.Add(new ToDoDto() {Title="待办"+i,Content="正在处理..." });
 
-                MemoDtos.Add(new MemoDto() {Title="备忘"+i,Content="密码是..." });
+                MemoDtos.Add(new Shared.Dtos.MemoDto() {Title="备忘"+i,Content="密码是..." });
             }
 
         }

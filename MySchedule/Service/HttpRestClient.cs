@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace MySchedule.Service
 {
+    //通用的Http请求类
     public class HttpRestClient
     {
         //访问api
@@ -28,15 +29,16 @@ namespace MySchedule.Service
         {
             var request = new RestRequest(baseRequest.Method);
             request.AddHeader("Content-Type", baseRequest.ContentType);
-
+            //
             if (baseRequest.Parameter != null)
                 request.AddParameter("param", JsonConvert.SerializeObject(baseRequest.Parameter), ParameterType.RequestBody);
+            //Api的基地址
             client.BaseUrl = new Uri(apiUrl + baseRequest.Route);
             var response = await client.ExecuteAsync(request);
             return JsonConvert.DeserializeObject<ApiResponse>(response.Content);          
         }
 
-        //发起访问请求
+        //发起访问请求【泛型类】
         public async Task<ApiResponse<T>> ExecuteAsync<T>(BaseRequest baseRequest)
         {
             var request = new RestRequest(baseRequest.Method);

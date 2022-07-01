@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MySchedule.Service
 {
-    //通用的访问请求类
+    //访问请求类
     public class BaseRequest
     {
 

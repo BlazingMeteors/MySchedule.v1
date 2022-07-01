@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace MySchedule.Service
 {
+    //通用服务接口
     //通用接口：增删改查
     public interface IBaseService<TEntity> where TEntity : class
     {

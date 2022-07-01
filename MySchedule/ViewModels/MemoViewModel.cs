@@ -1,4 +1,6 @@
-﻿using MySchedule.Common.Models;
+﻿//using MySchedule.Common.Models;
+using MySchedule.Service;
+using MySchedule.Shared.Dtos;
 using Prism.Commands;
 using Prism.Mvvm;
 using System;
@@ -12,13 +14,17 @@ namespace MySchedule.ViewModels
 {
     internal class MemoViewModel:BindableBase
     {
-        public MemoViewModel()
+        public MemoViewModel(IMemoService service)
         {
             MemoDtos = new ObservableCollection<MemoDto>();
-            CreateToDoList();
 
             AddCommand = new DelegateCommand(Add);
+            this.service = service;
+            CreateToDoList();
+
         }
+        //备忘录的服务
+        private readonly IMemoService service;
 
         //备忘录的数据集合
         private ObservableCollection<MemoDto> memoDtos;
@@ -41,13 +47,26 @@ namespace MySchedule.ViewModels
         }
 
 
-        void CreateToDoList()
+        async void CreateToDoList()
         {
-            for (int i = 0; i < 10; i++)
+            var memoResult = await service.GetAllAsync(new Shared.QueryParams.QueryParameters()
             {
-                MemoDtos.Add(new MemoDto() { Title = "备忘录" + i, Content = "正在处理..." });
-
+                PageIndex = 0,
+                PageSize = 100,
+            });
+            if (memoResult.Status)
+            {
+                foreach (var item in memoResult.Result.Items)
+                {
+                    MemoDtos.Add(item);
+                }
             }
+
+            //for (int i = 0; i < 10; i++)
+            //{
+            //    MemoDtos.Add(new MemoDto() { Title = "备忘录" + i, Content = "正在处理..." });
+
+            //}
         }
 
         void Add()

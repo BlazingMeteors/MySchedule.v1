@@ -121,3 +121,5 @@ F:\WeiHong\MySchedule\MySchedule\obj\Debug\net5.0-windows\MySchedule.csproj.Core
 F:\WeiHong\MySchedule\MySchedule\obj\Debug\net5.0-windows\MySchedule.csproj.CopyComplete
 F:\WeiHong\MySchedule\MySchedule\obj\Debug\net5.0-windows\MySchedule.genruntimeconfig.cache
 F:\WeiHong\MySchedule\MySchedule\obj\Debug\net5.0-windows\ref\MySchedule.dll
+F:\WeiHong\MySchedule\MySchedule\obj\Debug\net5.0-windows\Views\ProgressView.g.cs
+F:\WeiHong\MySchedule\MySchedule\obj\Debug\net5.0-windows\Views\ProgressView.baml

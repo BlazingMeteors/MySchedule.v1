@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace MySchedule.Api.Service
 {
-    //通用的接口：增删改查
+    //通用服务的接口：增删改查
     public interface IBaseService<T>
     {
         Task<ApiResponse> GetAllAsync(QueryParameters query);

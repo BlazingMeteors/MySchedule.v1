@@ -10,3 +10,15 @@ F:\WeiHong\Code\MySchedule\MySchedule.Shared\obj\Debug\net5.0\MySchedule.Shared.
 F:\WeiHong\Code\MySchedule\MySchedule.Shared\obj\Debug\net5.0\refint\MySchedule.Shared.dll
 F:\WeiHong\Code\MySchedule\MySchedule.Shared\obj\Debug\net5.0\MySchedule.Shared.pdb
 F:\WeiHong\Code\MySchedule\MySchedule.Shared\obj\Debug\net5.0\ref\MySchedule.Shared.dll
+F:\WeiHong\MySchedule\MySchedule.Shared\bin\Debug\net5.0\MySchedule.Shared.deps.json
+F:\WeiHong\MySchedule\MySchedule.Shared\bin\Debug\net5.0\MySchedule.Shared.dll
+F:\WeiHong\MySchedule\MySchedule.Shared\bin\Debug\net5.0\MySchedule.Shared.pdb
+F:\WeiHong\MySchedule\MySchedule.Shared\obj\Debug\net5.0\MySchedule.Shared.csproj.AssemblyReference.cache
+F:\WeiHong\MySchedule\MySchedule.Shared\obj\Debug\net5.0\MySchedule.Shared.GeneratedMSBuildEditorConfig.editorconfig
+F:\WeiHong\MySchedule\MySchedule.Shared\obj\Debug\net5.0\MySchedule.Shared.AssemblyInfoInputs.cache
+F:\WeiHong\MySchedule\MySchedule.Shared\obj\Debug\net5.0\MySchedule.Shared.AssemblyInfo.cs
+F:\WeiHong\MySchedule\MySchedule.Shared\obj\Debug\net5.0\MySchedule.Shared.csproj.CoreCompileInputs.cache
+F:\WeiHong\MySchedule\MySchedule.Shared\obj\Debug\net5.0\MySchedule.Shared.dll
+F:\WeiHong\MySchedule\MySchedule.Shared\obj\Debug\net5.0\refint\MySchedule.Shared.dll
+F:\WeiHong\MySchedule\MySchedule.Shared\obj\Debug\net5.0\MySchedule.Shared.pdb
+F:\WeiHong\MySchedule\MySchedule.Shared\obj\Debug\net5.0\ref\MySchedule.Shared.dll

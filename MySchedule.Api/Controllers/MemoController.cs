@@ -39,7 +39,7 @@ namespace MySchedule.Api.Controllers
         {
             return await memoService.AddAsync(model);
         }
-        
+
 
         [HttpPost]
         public async Task<ApiResponse> Update([FromBody] MemoDto model)

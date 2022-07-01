@@ -35,7 +35,7 @@ namespace MySchedule.Api.Service
 
                 await unitOfWork.GetRepository<ToDo>().InsertAsync(todo);
                 if (await unitOfWork.SaveChangesAsync() > 0)
-                    return new ApiResponse(true, model);
+                    return new ApiResponse(true, todo);
                 return new ApiResponse("添加数据失败");
             }catch(Exception ex)
             {

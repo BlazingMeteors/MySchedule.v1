@@ -1,4 +1,4 @@
-﻿
+﻿//using MySchedule.Common.Models;
 using MySchedule.Shared.Dtos;
 using MySchedule.Shared.QueryParams;
 using MyToDo.Shared.Contact;

@@ -1,4 +1,6 @@
-﻿using MySchedule.ViewModels;
+﻿using MySchedule.Extensions;
+using MySchedule.ViewModels;
+using Prism.Events;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,9 +22,19 @@ namespace MySchedule.Views
     /// </summary>
     public partial class MainView : Window
     {
-        public MainView()
+        public MainView(IEventAggregator aggregator)
         {
             InitializeComponent();
+
+            //注册：等待消息窗口
+            aggregator.Register(arg =>
+            {
+                DialogHost.IsOpen = arg.IsOpen;
+
+                if (DialogHost.IsOpen)
+                    DialogHost.DialogContent = new ProgressView();
+            });
+
 
             //界面最大化、最小化、关闭
             btnMax.Click += (s, e) =>

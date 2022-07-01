@@ -3,7 +3,7 @@ using MySchedule.Shared.Dtos;
 
 namespace MySchedule.Api.Service
 {
-    public interface IMemoService : IBaseService<MemoDto>
+    public interface IMemoService:IBaseService<MemoDto>
     {
 
 
