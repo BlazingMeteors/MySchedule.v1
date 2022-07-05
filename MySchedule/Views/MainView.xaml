@@ -25,7 +25,7 @@
     WindowStartupLocation="CenterScreen"
     AllowsTransparency="True">
     <materialDesign:DialogHost
-        Identifier="RootDialog"
+        Identifier="Root"
         DialogTheme="Inherit" 
         x:Name="DialogHost">
         <!--SnackbarMessageQueue="{Binding ElementName=MainSnackbar, Path=MessageQueue}">-->

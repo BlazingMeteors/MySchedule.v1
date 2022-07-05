@@ -1,5 +1,7 @@
 ﻿
 FF:\WeiHong\MySchedule\MySchedule\App.xaml;;
+FF:\WeiHong\MySchedule\MySchedule\Views\Dialogs\AddMemoView.xaml;;
+FF:\WeiHong\MySchedule\MySchedule\Views\Dialogs\AddToDoView.xaml;;
 FF:\WeiHong\MySchedule\MySchedule\Views\IndexView.xaml;;
 FF:\WeiHong\MySchedule\MySchedule\Views\MainView.xaml;;
 FF:\WeiHong\MySchedule\MySchedule\Views\MemoView.xaml;;
@@ -7,4 +9,5 @@ FF:\WeiHong\MySchedule\MySchedule\Views\ProgressView.xaml;;
 FF:\WeiHong\MySchedule\MySchedule\Views\SettingsView.xaml;;
 FF:\WeiHong\MySchedule\MySchedule\Views\SkinView.xaml;;
 FF:\WeiHong\MySchedule\MySchedule\Views\ToDoView.xaml;;
+FF:\WeiHong\MySchedule\MySchedule\Views\MsgView.xaml;;
 

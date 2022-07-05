@@ -1,4 +1,5 @@
-﻿using MySchedule.Common.Models;
+﻿using MySchedule.Common;
+using MySchedule.Common.Models;
 using MySchedule.Extensions;
 using Prism.Commands;
 using Prism.Mvvm;
@@ -12,12 +13,12 @@ using System.Threading.Tasks;
 
 namespace MySchedule.ViewModels
 {
-    public class MainViewModel:BindableBase
+    public class MainViewModel:BindableBase,IConfigureService
     {
         public MainViewModel(IRegionManager regionManager)
         {
             MenuBars = new ObservableCollection<MenuBar>();
-            CreateMenuBar();
+            
 
             NavigateCommand = new DelegateCommand<MenuBar>(Navigate);
             this.regionManager = regionManager;
@@ -55,6 +56,10 @@ namespace MySchedule.ViewModels
         public DelegateCommand GoBackCommand { get; private set; }
         //向后跳转
         public DelegateCommand GoForwardCommand { get; private set; }      
+        /// <summary>
+        /// 首页跳转
+        /// </summary>
+        /// <param name="obj"></param>
         private void Navigate(MenuBar obj)
         {
             //判断是否传入所要导航到的界面的NameSpace
@@ -68,11 +73,6 @@ namespace MySchedule.ViewModels
             });
         }
 
-
-
-
-
-
         /// <summary>
         /// 创建左侧菜单栏
         /// </summary>
@@ -84,5 +84,15 @@ namespace MySchedule.ViewModels
             MenuBars.Add(new MenuBar() { Icon = "Cog", Title = "设置", NameSpace = "SettingsView" });
         }
 
+
+        /// <summary>
+        /// 首页初始界面设置为IndexView
+        /// </summary>
+        public void Configure()
+        {
+            CreateMenuBar();
+
+            regionManager.Regions[PrismManager.MainViewRegionName].RequestNavigate("IndexView");
+        }
     }
 }

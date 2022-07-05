@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace MySchedule.Common.Models
 {
     //任务栏的实体类
-    internal class TaskBar:BindableBase
+    public class TaskBar:BindableBase
     {
         private string icon;
 

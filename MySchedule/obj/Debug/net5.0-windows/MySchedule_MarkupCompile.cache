@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 F:\WeiHong\MySchedule\MySchedule\App.xaml
-72141509837
+10841627095
 
-31-78781876
+41-733925032
 203-431701789
-Views\IndexView.xaml;Views\MainView.xaml;Views\MemoView.xaml;Views\ProgressView.xaml;Views\SettingsView.xaml;Views\SkinView.xaml;Views\ToDoView.xaml;
+Views\Dialogs\AddMemoView.xaml;Views\Dialogs\AddToDoView.xaml;Views\IndexView.xaml;Views\MainView.xaml;Views\MemoView.xaml;Views\MsgView.xaml;Views\ProgressView.xaml;Views\SettingsView.xaml;Views\SkinView.xaml;Views\ToDoView.xaml;
 
 False
 

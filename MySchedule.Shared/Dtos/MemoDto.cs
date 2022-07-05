@@ -29,13 +29,13 @@ namespace MySchedule.Shared.Dtos
             set { content = value; OnPropertyChanged(); }
         }
 
-        private int status;
+        //private int status;
 
-        public int Status
-        {
-            get { return status; }
-            set { status = value; OnPropertyChanged(); }
-        }
+        //public int Status
+        //{
+        //    get { return status; }
+        //    set { status = value; OnPropertyChanged(); }
+        //}
 
 
 

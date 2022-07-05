@@ -1,6 +1,10 @@
-﻿using MySchedule.Common.Models;
+﻿using MySchedule.Common;
+using MySchedule.Common.Models;
 using MySchedule.Shared.Dtos;
+using Prism.Commands;
+using Prism.Ioc;
 using Prism.Mvvm;
+using Prism.Services.Dialogs;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -12,14 +16,20 @@ using System.Threading.Tasks;
 
 namespace MySchedule.ViewModels
 {
-    internal class IndexViewModel:BindableBase
+    public class IndexViewModel: BindableBase
     {
-        public IndexViewModel()
+        private readonly IDialogHostService dialog;
+        public IndexViewModel(IDialogHostService dialog)
         {
+
+            ToDoDtos = new ObservableCollection<ToDoDto>();
+            MemoDtos = new ObservableCollection<Shared.Dtos.MemoDto>();
             TaskBars = new ObservableCollection<TaskBar>();
             CreateTaskBars();
 
-            CreateTestData();
+            this.dialog = dialog;   
+
+            ExecuteCommand = new DelegateCommand<string>(Execute);
         }
 
         //任务栏的数据集合
@@ -32,6 +42,7 @@ namespace MySchedule.ViewModels
         }
         public void CreateTaskBars()
         {
+            
             TaskBars.Add(new TaskBar() { Icon = "ClockFast", Title = "汇总", Color = "#FF0CA0FF", Target = "ToDoView" ,Content="9"});
             TaskBars.Add(new TaskBar() { Icon = "ClockCheckOutline", Title = "已完成", Color = "#FF1ECA3A", Target = "ToDoView",Content="9"});
             TaskBars.Add(new TaskBar() { Icon = "ChartLineVariant", Title = "完成比例", Color = "#FF02C6DC", Target = "" ,Content="100%"});
@@ -55,19 +66,41 @@ namespace MySchedule.ViewModels
             set { memoDtos = value; RaisePropertyChanged(); }
         }
 
-        public void CreateTestData()
+        //初始化数据
+        //public void CreateTestData()
+        //{
+            
+        //    for (int i = 0; i < 10; i++)
+        //    {
+        //        ToDoDtos.Add(new ToDoDto() {Title="待办"+i,Content="正在处理..." });
+
+        //        MemoDtos.Add(new Shared.Dtos.MemoDto() {Title="备忘"+i,Content="密码是..." });
+        //    }
+
+        //}
+
+        /// <summary>
+        /// 在主页点击新增区新增待办、备忘录
+        /// </summary>
+        public DelegateCommand<string> ExecuteCommand { get; private set; }
+        private void Execute(string obj)
         {
-            ToDoDtos = new ObservableCollection<ToDoDto>();
-            MemoDtos = new ObservableCollection<Shared.Dtos.MemoDto>();
-            for (int i = 0; i < 10; i++)
+            switch (obj)
             {
-                ToDoDtos.Add(new ToDoDto() {Title="待办"+i,Content="正在处理..." });
-
-                MemoDtos.Add(new Shared.Dtos.MemoDto() {Title="备忘"+i,Content="密码是..." });
+                case "新增待办": AddToDo(); break;
+                case "新增备忘录": AddMemo(); break;
             }
-
         }
 
-
+        //首页添加备忘录的弹窗
+        private void AddMemo()
+        {
+            dialog.ShowDialog("AddMemoView",null);
+        }
+        //首页添加待办的弹窗
+        private void AddToDo()
+        {
+            dialog.ShowDialog("AddToDoView",null);
+        }
     }
 }

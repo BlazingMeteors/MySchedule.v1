@@ -1,5 +1,7 @@
 ﻿
 //using MySchedule.Common.Models;
+using MySchedule.Common;
+using MySchedule.Extensions;
 using MySchedule.Service;
 using MySchedule.Shared.Dtos;
 using Prism.Commands;
@@ -15,14 +17,16 @@ using System.Threading.Tasks;
 
 namespace MySchedule.ViewModels
 {
-    internal class ToDoViewModel : NavigationViewModel
+    public  class ToDoViewModel : NavigationViewModel
     {
+        private readonly IDialogHostService dialogHost;
         public ToDoViewModel(IToDoService service,IContainerProvider containerProvider):base(containerProvider)
         {
             ToDoDtos = new ObservableCollection<ToDoDto>();
             ExecuteCommand = new DelegateCommand<string>(Execute);
             SelectedCommand = new DelegateCommand<ToDoDto>(Selected);
             DeleteCommand = new DelegateCommand<ToDoDto>(Delete);
+            dialogHost = containerProvider.Resolve<IDialogHostService>();
             this.service = service;
         }
 
@@ -221,8 +225,8 @@ namespace MySchedule.ViewModels
         {
             try
             {
-                //var dialogResult = await dialogHost.Question("温馨提示", $"确认删除待办事项:{obj.Title} ?");
-                //if (dialogResult.Result != Prism.Services.Dialogs.ButtonResult.OK) return;
+                var dialogResult = await dialogHost.Question("温馨提示", $"确认删除待办事项:{obj.Title} ?");
+                if (dialogResult.Result != Prism.Services.Dialogs.ButtonResult.OK) return;
 
                 UpdateLoading(true);
                 var deleteResult = await service.DeleteAsync(obj.Id);

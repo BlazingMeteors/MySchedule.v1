@@ -105,7 +105,9 @@
                             Height="30"
                             VerticalAlignment="Top"
                             DockPanel.Dock="Right"
-                            Style="{StaticResource MaterialDesignFloatingActionAccentButton}">
+                            Style="{StaticResource MaterialDesignFloatingActionAccentButton}"
+                            Command="{Binding ExecuteCommand}"
+                            CommandParameter="新增待办">
                         <materialDesign:PackIcon Kind="Add" />
                     </Button>
                 </DockPanel>
@@ -148,7 +150,9 @@
                             VerticalAlignment="Top"
                             DockPanel.Dock="Right"
                             Style="{StaticResource MaterialDesignFloatingActionAccentButton}"
-                            Cursor="Hand">
+                            Cursor="Hand"
+                            Command="{Binding ExecuteCommand}"
+                            CommandParameter="新增备忘录">
                         <materialDesign:PackIcon Kind="Add" />
                     </Button>
                 </DockPanel>

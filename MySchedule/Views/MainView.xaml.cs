@@ -1,4 +1,5 @@
-﻿using MySchedule.Extensions;
+﻿using MySchedule.Common;
+using MySchedule.Extensions;
 using MySchedule.ViewModels;
 using Prism.Events;
 using System;
@@ -22,7 +23,9 @@ namespace MySchedule.Views
     /// </summary>
     public partial class MainView : Window
     {
-        public MainView(IEventAggregator aggregator)
+        private readonly IDialogHostService dialogHostService;
+
+        public MainView(IEventAggregator aggregator,IDialogHostService dialogHostService)
         {
             InitializeComponent();
 
@@ -52,8 +55,10 @@ namespace MySchedule.Views
             {
                 this.WindowState = WindowState.Minimized;
             };
-            btnClose.Click += (s, e) =>
+            btnClose.Click += async (s, e) =>
             {
+                var dialogResult = await dialogHostService.Question("温馨提示", $"确认删除待办事项:{obj.Title} ?");
+                if (dialogResult.Result != Prism.Services.Dialogs.ButtonResult.OK) return;
                 this.Close();
             };
             //界面顶部实现鼠标拖动、双击界面变化
@@ -81,6 +86,7 @@ namespace MySchedule.Views
             {
                 DrawerHost.IsLeftDrawerOpen = false;
             };
+            this.dialogHostService = dialogHostService;
         }
     }
 }

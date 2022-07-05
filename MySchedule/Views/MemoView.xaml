@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MySchedule.Views"
              xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     
@@ -23,16 +24,20 @@
                     <TextBox md:HintAssist.Hint="请输入备忘录概要"
                              md:TextFieldAssist.HasClearButton="True"
                              DockPanel.Dock="Top"
-                             Margin="20,0" />
+                             Margin="20,0" 
+                             Text="{Binding CurrentDto.Title}"/>
                     <TextBox md:HintAssist.Hint="请输入备忘录内容"
                              md:TextFieldAssist.HasClearButton="True"
                              DockPanel.Dock="Top"
                              Margin="20"
                              MinHeight="100"
-                             Cursor="IBeam" />
+                             Cursor="IBeam" 
+                             Text="{Binding CurrentDto.Content}"/>
                     <Button Margin="20,0"
                             Content="添加到备忘录"
-                            DockPanel.Dock="Top" />
+                            DockPanel.Dock="Top"
+                            Command="{Binding ExecuteCommand}"
+                            CommandParameter="保存"/>
                 </DockPanel>
             </md:DrawerHost.RightDrawerContent>
             
@@ -47,14 +52,24 @@
                     <TextBox Width="250"
                              VerticalAlignment="Center"
                              md:HintAssist.Hint="查找备忘录..."
-                             md:TextFieldAssist.HasClearButton="True" />
+                             md:TextFieldAssist.HasClearButton="True"
+                             Text="{Binding Search,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                        <TextBox.InputBindings>
+                            <KeyBinding Key="Enter"
+                                        Command="{Binding ExecuteCommand}"
+                                        CommandParameter="查询">
+                                
+                            </KeyBinding>
+                        </TextBox.InputBindings>
+                    </TextBox>
                 </StackPanel>
                 
                 <Button HorizontalAlignment="Right"
                         Content="+添加备忘录"
                         Margin="10,5"
                         Cursor="Hand"
-                        Command="{Binding AddCommand}" />
+                        Command="{Binding ExecuteCommand}" 
+                        CommandParameter="新增"/>
                 <ScrollViewer Grid.Row="1">
                     <ItemsControl Grid.Row="1"
                                   ItemsSource="{Binding MemoDtos}"
@@ -72,13 +87,21 @@
                                           MinHeight="180"
                                           MaxHeight="250"
                                           Margin="8">
+                                        <i:Interaction.Triggers>
+                                            <i:EventTrigger EventName="MouseLeftButtonUp">
+                                                <i:InvokeCommandAction CommandParameter="{Binding}"
+                                                                       Command="{Binding DataContext.SelectedCommand,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=ItemsControl}}" />
+                                            </i:EventTrigger>
+                                        </i:Interaction.Triggers>
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="auto" />
                                             <RowDefinition />
                                         </Grid.RowDefinitions>
                                         <md:PopupBox HorizontalAlignment="Right"
                                                      Panel.ZIndex="1">
-                                            <Button Content="删除" />
+                                            <Button Content="删除" 
+                                                    CommandParameter="{Binding}"
+                                                    Command="{Binding DataContext.DeleteCommand,RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=ItemsControl}}"/>
                                         </md:PopupBox>
                                         <Border CornerRadius="3"
                                                 Grid.RowSpan="2"
