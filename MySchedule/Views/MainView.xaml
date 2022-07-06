@@ -81,6 +81,8 @@
             </materialDesign:DrawerHost.LeftDrawerContent>
             
             <DockPanel>
+                
+                
                 <materialDesign:ColorZone
                     Padding="16"
                     x:Name="TopZone"

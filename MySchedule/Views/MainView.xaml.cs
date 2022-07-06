@@ -57,7 +57,7 @@ namespace MySchedule.Views
             };
             btnClose.Click += async (s, e) =>
             {
-                var dialogResult = await dialogHostService.Question("温馨提示", $"确认删除待办事项:{obj.Title} ?");
+                var dialogResult = await dialogHostService.Question("温馨提示", "确认退出系统");
                 if (dialogResult.Result != Prism.Services.Dialogs.ButtonResult.OK) return;
                 this.Close();
             };

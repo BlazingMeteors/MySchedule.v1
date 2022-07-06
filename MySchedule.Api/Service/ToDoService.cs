@@ -4,6 +4,8 @@ using MySchedule.Shared.Dtos;
 using MySchedule.Shared.QueryParams;
 using MyToDo.Api;
 using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -112,34 +114,40 @@ namespace MySchedule.Api.Service
                 return new ApiResponse(ex.Message);
             }
         }
-
+        /// <summary>
+        /// 首页汇总
+        /// </summary>
+        /// <returns></returns>
         public async Task<ApiResponse> Summary()
         {
-            //try
-            //{
-            //    //待办事项结果
-            //    var todos = await unitOfWork.GetRepository<ToDo>().GetAllAsync(
-            //        orderBy: source => source.OrderByDescending(t => t.CreateDate));
+            try
+            {
+                //获取待办事项结果
+                var todos = await unitOfWork.GetRepository<ToDo>().GetAllAsync(
+                    orderBy: source => source.OrderByDescending(t => t.CreateDate));
 
-            //    //备忘录结果
-            //    var memos = await work.GetRepository<Memo>().GetAllAsync(
-            //        orderBy: source => source.OrderByDescending(t => t.CreateDate));
+                //获取备忘录结果
+                var memos = await unitOfWork.GetRepository<Memo>().GetAllAsync(
+                    orderBy: source => source.OrderByDescending(t => t.CreateDate));
 
-            //    SummaryDto summary = new SummaryDto();
-            //    summary.Sum = todos.Count(); //汇总待办事项数量
-            //    summary.CompletedCount = todos.Where(t => t.Status == 1).Count(); //统计完成数量
-            //    summary.CompletedRatio = (summary.CompletedCount / (double)summary.Sum).ToString("0%"); //统计完成率
-            //    summary.MemoeCount = memos.Count();  //汇总备忘录数量
-            //    summary.ToDoList = new ObservableCollection<ToDoDto>(Mapper.Map<List<ToDoDto>>(todos.Where(t => t.Status == 0)));
-            //    summary.MemoList = new ObservableCollection<MemoDto>(Mapper.Map<List<MemoDto>>(memos));
+                SummaryDto summary = new SummaryDto();
 
-            //    return new ApiResponse(true, summary);
-            //}
-            //catch (Exception ex)
-            //{
-            //    return new ApiResponse(false, "");
-            //}
-            return new ApiResponse(false, "");
+                summary.Sum = todos.Count(); //汇总待办事项数量
+                summary.CompletedCount = todos.Where(t => t.Status == 1).Count(); //统计待办事项的完成数量
+                summary.CompletedRatio = (summary.CompletedCount / (double)summary.Sum).ToString("0%"); //统计完成率
+                summary.MemoeCount = memos.Count();  //汇总备忘录数量
+
+                summary.ToDoList = new ObservableCollection<ToDoDto>(Mapper.Map<List<ToDoDto>>(todos.Where(t => t.Status == 0)));
+                summary.MemoList = new ObservableCollection<MemoDto>(Mapper.Map<List<MemoDto>>(memos));
+
+                //返回实体数据
+                return new ApiResponse(true, summary);
+            }
+            catch (Exception ex)
+            {
+                return new ApiResponse(false, "");
+            }
+
         }
 
 

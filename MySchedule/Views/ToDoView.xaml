@@ -122,19 +122,19 @@
                                         
                                         <Border CornerRadius="3"
                                                 Grid.RowSpan="2"
-                                                Background="#FF1ECA3A">
+                                                >
                                             <Border.Style>
                                                 <Style TargetType="Border">
                                                     <Style.Triggers>
                                                         <DataTrigger Binding="{Binding Status}"
                                                                      Value="0">
                                                             <Setter Property="Background"
-                                                                    Value="#3CB371" />
+                                                                    Value="#1E90FF" />
                                                         </DataTrigger>
                                                         <DataTrigger Binding="{Binding Status}"
                                                                      Value="1">
                                                             <Setter Property="Background"
-                                                                    Value="#1E90FF" />
+                                                                    Value="#3CB371" />
                                                         </DataTrigger>
                                                     </Style.Triggers>
                                                 </Style>

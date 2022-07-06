@@ -15,6 +15,14 @@ namespace MySchedule.ViewModels
 {
     public class MainViewModel:BindableBase,IConfigureService
     {
+        private string userName;
+
+        public string UserName
+        {
+            get { return userName; }
+            set { userName = value; RaisePropertyChanged(); }
+        }
+
         public MainViewModel(IRegionManager regionManager)
         {
             MenuBars = new ObservableCollection<MenuBar>();
@@ -86,12 +94,13 @@ namespace MySchedule.ViewModels
 
 
         /// <summary>
-        /// 首页初始界面设置为IndexView
+        /// 首页的初始界面设置为IndexView
         /// </summary>
         public void Configure()
         {
-            CreateMenuBar();
+            UserName = AppSession.UserName;
 
+            CreateMenuBar();
             regionManager.Regions[PrismManager.MainViewRegionName].RequestNavigate("IndexView");
         }
     }

@@ -156,7 +156,7 @@ namespace MySchedule.ViewModels
             UpdateLoading(true);
             //待办事项状态
             int? Status = SelectedIndex == 0 ? null : SelectedIndex == 2 ? 1 : 0;
-            var todoResult = await service.GetAllAsync(new Shared.QueryParams.ToDoParameters()
+            var todoResult = await service.GetAllFilterAsync(new Shared.QueryParams.ToDoParameters()
             {
                 PageIndex = 0,
                 PageSize = 100,
@@ -179,6 +179,7 @@ namespace MySchedule.ViewModels
         public override void OnNavigatedTo(NavigationContext navigationContext)
         {
             base.OnNavigatedTo(navigationContext);
+            //获取导航传输的状态码
             if (navigationContext.Parameters.ContainsKey("Value"))
                 SelectedIndex = navigationContext.Parameters.GetValue<int>("Value");
             else

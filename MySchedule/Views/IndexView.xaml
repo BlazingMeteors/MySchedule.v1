@@ -6,18 +6,23 @@
              xmlns:local="clr-namespace:MySchedule.Views"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:prism="http://prismlibrary.com/"
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+             xmlns:cv="clr-namespace:MySchedule.Common.Converters"
                         
              prism:ViewModelLocator.AutoWireViewModel="True"
              mc:Ignorable="d"
              d:DesignHeight="450"
              d:DesignWidth="800">
+    <UserControl.Resources>
+        <cv:IntToBoolConverter x:Key="intToBool" />
+    </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
             <RowDefinition />
         </Grid.RowDefinitions>
-        <TextBlock Text="你好，ZY！"
+        <TextBlock Text="{Binding Title}"
                    Margin="15,8"
                    FontSize="20" />
         <ItemsControl Grid.Row="1"
@@ -32,6 +37,11 @@
                     <Border Background="{Binding Color}"
                             Margin="10"
                             CornerRadius="5">
+                        <Border.InputBindings>
+                            <MouseBinding MouseAction="LeftClick"
+                                          Command="{Binding DataContext.NavigateCommand, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=ItemsControl}}"
+                                          CommandParameter="{Binding}" />
+                        </Border.InputBindings>
                         <Border.Style>
                             <Style TargetType="Border">
                                 <Style.Triggers>
@@ -111,14 +121,24 @@
                         <materialDesign:PackIcon Kind="Add" />
                     </Button>
                 </DockPanel>
-                <ListBox ItemsSource="{Binding ToDoDtos}"
+                <ListBox ItemsSource="{Binding Summary.ToDoList}"
                          ScrollViewer.VerticalScrollBarVisibility="Hidden"
                          HorizontalContentAlignment="Stretch">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="MouseDoubleClick">
+                            <i:InvokeCommandAction Command="{Binding EditToDoCommand}"
+                                                   CommandParameter="{Binding ElementName=todoList,Path=SelectedItem}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                    
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <DockPanel MaxHeight="80"
                                        LastChildFill="False">
-                                <ToggleButton DockPanel.Dock="Right" />
+                                <ToggleButton DockPanel.Dock="Right"
+                                              IsChecked="{Binding Status,Converter={StaticResource intToBool}}"
+                                              Command="{Binding DataContext.ToDoCompltedCommand, RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=ItemsControl}}"
+                                              CommandParameter="{Binding}" />
                                 <StackPanel>
                                     <TextBlock Text="{Binding Title}"
                                                FontSize="16"
@@ -130,6 +150,7 @@
                             </DockPanel>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
+                    
                 </ListBox>
             </DockPanel>
             <Border Margin="10,4" Grid.Column="1"
@@ -156,9 +177,16 @@
                         <materialDesign:PackIcon Kind="Add" />
                     </Button>
                 </DockPanel>
-                <ListBox ItemsSource="{Binding MemoDtos}"
+                <ListBox ItemsSource="{Binding Summary.MemoList}"
                          ScrollViewer.VerticalScrollBarVisibility="Hidden"
                          HorizontalContentAlignment="Stretch">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="MouseDoubleClick">
+                            <i:InvokeCommandAction Command="{Binding EditMemoCommand}"
+                                                   CommandParameter="{Binding ElementName=memoList,Path=SelectedItem}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                    
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <DockPanel MaxHeight="80" LastChildFill="False">

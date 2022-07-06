@@ -34,6 +34,13 @@ namespace MySchedule.Api.Controllers
             return await toDoService.GetAllAsync(parameters);
         }
 
+        [HttpGet]
+        public async Task<ApiResponse> Summary(int id)
+        {
+            return await toDoService.Summary();
+        }
+
+
         [HttpPost]
         public async Task<ApiResponse> Add([FromBody]ToDoDto model)
         {

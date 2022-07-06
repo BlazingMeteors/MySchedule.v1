@@ -9,6 +9,11 @@ namespace MySchedule.Api.Service
     {
         Task<ApiResponse> GetAllAsync(ToDoParameters query);
 
+
+        /// <summary>
+        /// 首页汇总
+        /// </summary>
+        /// <returns></returns>
         Task<ApiResponse> Summary();
 
 

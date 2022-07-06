@@ -12,8 +12,8 @@ namespace MySchedule.Service
 {
     public interface IToDoService:IBaseService<ToDoDto>
 {
-        //Task<ApiResponse<PagedList<ToDoDto>>> GetAllFilterAsync(ToDoParameters parameter);
+        Task<ApiResponse<PagedList<ToDoDto>>> GetAllFilterAsync(ToDoParameters parameter);
 
-        //Task<ApiResponse<SummaryDto>> SummaryAsync();
+        Task<ApiResponse<SummaryDto>> SummaryAsync();
     }
 }
